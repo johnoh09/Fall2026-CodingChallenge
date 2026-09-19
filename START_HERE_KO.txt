@@ -1,0 +1,134 @@
+Frameboard 실행 안내
+===================
+
+[새 기능: 내 사진 업로드]
+상단 또는 컬렉션 안의 Upload photo를 누릅니다.
+Choose photo → 사진 선택 → 제목과 컬렉션 확인 → Upload & save.
+JPG/PNG/WebP를 한 번에 한 장, 10MB까지 올릴 수 있습니다.
+HEIC는 JPG로 변환해서 올려주세요. Pixabay 키는 필요 없습니다.
+
+[이전 버전을 사용 중이라면]
+1. 실행 중인 터미널에서 Ctrl+C를 누릅니다.
+2. 기존 프로젝트를 백업합니다.
+3. 새 ZIP의 파일을 기존 프로젝트에 합쳐 복사합니다.
+   기존 server/data, server/.env, .git은 반드시 유지하세요.
+   기존 server 폴더 전체를 지우지 마세요. 사진/계정/컬렉션이 들어 있습니다.
+4. 프로젝트 루트에서 npm install을 다시 실행합니다.
+5. npm run dev로 다시 켭니다.
+
+
+수업 사진처럼 web/src/App.tsx와 server/index.js로 구성했습니다.
+화면은 5173번, 서버는 5001번 포트에서 따로 실행됩니다.
+
+1. ZIP 압축을 해제합니다.
+2. VS Code > File > Open Folder에서 Frameboard 폴더를 엽니다.
+   package.json, web, server가 바로 보이는 폴더입니다.
+3. Node.js 24 이상이 필요합니다. 터미널에서 node -v로 확인합니다.
+   설치/업데이트: https://nodejs.org/
+   설치 후 VS Code를 완전히 닫았다가 다시 여세요.
+4. VS Code 메뉴 Terminal > New Terminal을 누릅니다.
+5. 아래 명령을 한 줄씩 입력합니다.
+
+   npm install
+   npm run dev
+
+6. 브라우저에서 http://localhost:5173 을 엽니다.
+7. 실행 중에는 터미널을 닫지 마세요. 종료하려면 Ctrl+C입니다.
+
+Windows에서 'npm.ps1을 실행할 수 없습니다'라는 오류가 나오면:
+   npm.cmd install
+   npm.cmd run dev
+를 사용하거나 터미널 종류를 Command Prompt로 바꾸세요.
+
+API 키 없이 바로 되는 기능
+-------------------------
+- 포함된 16장의 사진 검색 (mountains, forest, ocean, design 등)
+- 컬렉션 생성, 이름/설명/색 수정, 삭제
+- 사진 저장, 제목/메모 수정, 삭제
+- 회원가입/로그인, SQLite 데이터 저장
+- 보기 전용 / 편집 가능 공유 링크
+- 계정 이메일을 통한 공동 편집 권한 추가/삭제
+
+사용 순서
+---------
+New collection → 이름 입력 → Create collection
+Add images → 마음에 드는 사진의 Save → Save image
+Done adding → 저장된 사진 확인
+사진의 Edit → 제목/메모 수정 → Save changes
+Share → View only 또는 Can edit → Copy link
+
+회원가입 없이도 바로 사용할 수 있습니다.
+내 데이터는 서버의 SQLite 파일에 저장됩니다.
+회원가입하면 현재 게스트 컬렉션이 계정에 연결됩니다.
+게스트 상태에서 쿠키를 지우면 기존 컬렉션에 접근할 수 없으므로,
+계속 쓸 컬렉션이라면 먼저 계정을 만드세요.
+
+공유 링크 테스트
+----------------
+같은 컴퓨터의 시크릿 창이나 다른 브라우저에서 링크를 열면 됩니다.
+View only: 보기만 가능
+Can edit: 사진 추가, 수정, 삭제 가능
+Link off: 기존 링크 사용 불가
+
+localhost 링크를 다른 사람의 컴퓨터로 보내는 것만으로는 연결되지 않습니다.
+다른 컴퓨터와 공유하려면 별도로 호스팅해야 합니다. 이 ZIP은 로컬 실행용입니다.
+
+인터넷 이미지 검색으로 바꾸려면
+-----------------------------
+1. https://pixabay.com/api/docs/ 에서 본인 API 키를 받습니다.
+2. server/.env.example을 복사해 server/.env라는 이름으로 만듭니다.
+3. PIXABAY_API_KEY= 다음에 키를 넣습니다.
+4. 터미널에서 Ctrl+C를 누른 뒤 npm run dev를 다시 실행합니다.
+
+키는 채팅이나 GitHub에 올리지 마세요. .env는 Git 제외 목록에 있습니다.
+키가 없을 때는 Sample library라고 표시되며 포함된 사진만 검색됩니다.
+
+오류가 나오면
+-------------
+- ENOENT / package.json 없음: 현재 폴더를 확인하세요. web과 server가 있는
+  Frameboard 폴더에서 npm install을 실행해야 합니다.
+- node:sqlite 관련 오류: Node.js 24 이상으로 업데이트하세요.
+- Port 5173 is already in use / EADDRINUSE 5001: 이전에 켜 둔 수업 예제나
+  다른 개발 서버 터미널에서 Ctrl+C를 누르고 다시 실행하세요.
+- 화면에 서버 연결 오류: npm run dev로 화면과 서버를 함께 실행했는지 확인하세요.
+- 사진 검색 오류: .env의 Pixabay 키와 인터넷 연결을 확인하세요.
+  샘플 모드로 돌아가려면 키를 지우고 서버를 다시 시작하세요.
+
+수업 프로젝트에 넣기
+-------------------
+아직 작업한 것이 없다면 이 폴더를 그대로 사용해도 됩니다.
+이미 자신의 GitHub fork를 clone했다면:
+1. 기존 폴더를 먼저 백업합니다.
+2. 실행 중인 수업 예제를 Ctrl+C로 종료합니다.
+3. ZIP 안의 파일을 자신의 저장소 폴더에 복사합니다.
+   web, server는 이 버전으로 바꾸고 루트 package.json도 함께 복사합니다.
+   기존 node_modules나 예전 package-lock.json은 섞지 마세요.
+   자신의 .git 폴더와 과제의 원래 README.md는 그대로 보존합니다.
+4. 저장소 루트에서 npm install, npm run dev를 실행합니다.
+
+제출 전에 반드시 할 일
+----------------------
+1. README.txt의 Vanderbilt email 자리만 본인 이메일로 바꾸세요.
+2. 이름 Jihwan Oh가 맞는지 확인하세요.
+3. README.txt의 reflection은 초안입니다. 직접 실행하고 코드를 확인한 뒤
+   실제 경험에 맞게 수정하세요. 100단어 미만이어야 합니다.
+4. npm run check를 실행하고 브라우저에서도 직접 사용해보세요.
+5. docs/CODE_WALKTHROUGH_KO.md로 코드 구조를 이해하세요.
+6. 본인 fork 저장소에 커밋하고 push합니다.
+7. https://forms.gle/JfR4cwAEwn4HhBuX8 에서 완료 폼을 제출합니다.
+
+본인의 저장소 폴더에서 사용할 Git 명령 예:
+   git status
+   git add .
+   git commit -m "Build Frameboard image collections and collaboration"
+   git push
+
+이 파일을 만든 것만으로 GitHub에 올라가거나 완료 폼이 제출되지는 않습니다.
+마감은 과제 안내 기준 2026년 9월 18일 오후 11:59 (내슈빌/중부 시간)입니다.
+
+검증 범위
+---------
+서버 기능과 화면 클릭 흐름의 자동 테스트를 포함했습니다.
+화면 테스트는 jsdom 환경이며 실제 브라우저 픽셀 검사가 아닙니다.
+제작 환경의 브라우저가 localhost 접속을 차단해 실제 화면은 직접 확인해야 합니다.
+Pixabay 실서비스는 본인 키를 넣어 확인하세요. 자동 테스트에서는 모의 응답을 씁니다.

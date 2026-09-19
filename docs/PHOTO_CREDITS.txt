@@ -1,0 +1,84 @@
+Bundled sample photographs
+Source: Lorem Picsum (https://picsum.photos), with original Unsplash pages below.
+Photographs are included only as sample content, not claimed as original work.
+Unsplash license: https://unsplash.com/license
+
+Between the trees and the sea
+Photo: Paul Jarvis
+Source: https://unsplash.com/photos/6J--NXulQCs
+File: web/public/samples/10.jpg
+
+Take the scenic route
+Photo: Paul Jarvis
+Source: https://unsplash.com/photos/Cm7oKel-X2Q
+File: web/public/samples/11.jpg
+
+Where the tide meets the shore
+Photo: Paul Jarvis
+Source: https://unsplash.com/photos/I_9ILwtsl_k
+File: web/public/samples/12.jpg
+
+A quieter kind of blue
+Photo: Paul Jarvis
+Source: https://unsplash.com/photos/3MtiSMdnoCo
+File: web/public/samples/13.jpg
+
+Nothing but the ocean
+Photo: Paul Jarvis
+Source: https://unsplash.com/photos/IQ1kOQTJrOQ
+File: web/public/samples/14.jpg
+
+A moment by the waterfall
+Photo: Paul Jarvis
+Source: https://unsplash.com/photos/NYDo21ssGao
+File: web/public/samples/15.jpg
+
+Blue, as far as you can see
+Photo: Paul Jarvis
+Source: https://unsplash.com/photos/gkT4FfgHO5o
+File: web/public/samples/16.jpg
+
+The path less hurried
+Photo: Paul Jarvis
+Source: https://unsplash.com/photos/Ven2CV8IJ5A
+File: web/public/samples/17.jpg
+
+Little things, in focus
+Photo: Paul Jarvis
+Source: https://unsplash.com/photos/Ps2n0rShqaM
+File: web/public/samples/18.jpg
+
+A forest full of texture
+Photo: Paul Jarvis
+Source: https://unsplash.com/photos/P7Lh0usGcuk
+File: web/public/samples/19.jpg
+
+A deep breath of green
+Photo: Jerry Adney
+Source: https://unsplash.com/photos/_WiFMBRT7Aw
+File: web/public/samples/28.jpg
+
+Somewhere above the clouds
+Photo: Go Wild
+Source: https://unsplash.com/photos/V0yAek6BgGk
+File: web/public/samples/29.jpg
+
+Slow mornings, warm coffee
+Photo: Luke Chesser
+Source: https://unsplash.com/photos/KR2mdHJ5qMg
+File: web/public/samples/42.jpg
+
+The city after dark
+Photo: Oleg Chursin
+Source: https://unsplash.com/photos/IoCWq07GaG4
+File: web/public/samples/43.jpg
+
+Space to make something
+Photo: Luke Chesser
+Source: https://unsplash.com/photos/1uxV8fAfhVM
+File: web/public/samples/48.jpg
+
+Postcards from the coast
+Photo: Margaret Barley
+Source: https://unsplash.com/photos/Qo51KwK1dKg
+File: web/public/samples/49.jpg

@@ -1,0 +1,17 @@
+Validation results
+==================
+Environment: Node.js 24.19.0, npm 11.9.0, Linux.
+
+PASS — TypeScript type check and Vite production build.
+PASS — 12 backend integration tests.
+PASS — 4 frontend interaction tests using jsdom and a real test API.
+PASS — Vite/API proxy smoke check: HTML, session cookie, search, create collection, sample JPEG.
+
+NOT PERFORMED — Actual-browser visual inspection: cloud browser blocked localhost.
+NOT PERFORMED — Live Pixabay call with a real API key; provider/cache/download tested with mock responses.
+NOT PERFORMED — Windows execution; commands and path handling are cross-platform.
+NOT PERFORMED — GitHub upload, public hosting, or submission form.
+
+Run npm run check to repeat the build and all 16 automated tests.
+
+Upload coverage: decoded photo storage, metadata removal, authorized file reads, shared view/edit access, link revocation, invalid/empty/oversized files, file cleanup, and file picker → preview → saved photo UI flow.

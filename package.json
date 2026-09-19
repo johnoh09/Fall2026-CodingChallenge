@@ -1,0 +1,25 @@
+{
+  "name": "frameboard",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "workspaces": [
+    "web",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c green,blue \"npm run dev -w server\" \"npm run dev -w web\"",
+    "build": "npm run build -w web",
+    "start": "concurrently -k -n API,WEB \"npm start -w server\" \"npm run preview -w web\"",
+    "test": "npm test -w server && npm test -w web",
+    "check": "npm run build && npm test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "prettier": "^3.9.6"
+  }
+}
